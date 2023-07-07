@@ -1,5 +1,6 @@
 import { Configuration, OpenAIApi } from 'openai'
 import { functionDescriptions } from './descriptions';
+import { callFunctionFromResponse, getCurrentWeather } from '@src/utils';
 
 // OpenAI configuration creation
 const configuration = new Configuration({
@@ -10,9 +11,8 @@ const openai = new OpenAIApi(configuration);
 
 const userQuery = 'What is the weather in Stockholm?'
 
-const getCurrentWeather = async (location: string, unit: 'celcius' | 'fahrenheit') => {
-  // here we should technically call an external API to get the weather
-  return `The weather in ${location} is 20 degrees ${unit}`
+const functionOptions = {
+  getCurrentWeather
 }
 
 const main = async () => {
@@ -24,8 +24,10 @@ const main = async () => {
       function_call: 'auto'
     })
 
-    const responseMessage = res.data.choices[0].message
-    console.log(responseMessage)
+    console.log(res)
+
+    const result = callFunctionFromResponse(res.data, functionOptions)
+    console.log(result)
   } catch (err) {
     console.error(err.response.data.error)
   }
