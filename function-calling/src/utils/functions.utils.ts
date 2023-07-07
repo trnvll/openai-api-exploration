@@ -4,9 +4,14 @@ interface GetCurrentWeatherArgs {
   unit: 'celcius' | 'fahrenheit'
 }
 
-const getCurrentWeather = ({ location, unit }: GetCurrentWeatherArgs) => {
+const getCurrentWeather = (args: GetCurrentWeatherArgs) => {
+  // const { location, unit } = args
   // here we should technically call an external API to get the weather
-  return `The weather in ${location} is 20 degrees ${unit}`
+  return {
+    temperature: 72,
+    forecast: ['sunny', 'windy'],
+    ...args
+  }
 }
 
 export { getCurrentWeather }
