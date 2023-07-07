@@ -16,6 +16,7 @@
   "dependencies": {
     "langchain": "^0.0.103",
     "module-alias": "^2.2.3",
+    "openai": "^3.3.0",
     "tsconfig-paths": "^4.2.0"
   },
   "_moduleAliases": {
