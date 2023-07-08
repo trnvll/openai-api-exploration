@@ -1,4 +1,4 @@
-import { ChatCompletionFunctions } from "openai";
+import { ChatCompletionFunctions } from 'openai'
 
 const functionDescriptions: ChatCompletionFunctions[] = [
   {
@@ -13,13 +13,14 @@ const functionDescriptions: ChatCompletionFunctions[] = [
         },
         unit: {
           type: 'string',
-          description: 'The unit to get the weather in, in this case either "celcius" or "fahrenheit"',
-          enum: ['celcius', 'fahrenheit'],
+          description:
+            'The unit to get the weather in, in this case either "celsius" or "fahrenheit"',
+          enum: ['celsius', 'fahrenheit'],
         },
       },
       required: ['location', 'unit'],
     },
-  }
+  },
 ]
 
 export { functionDescriptions }

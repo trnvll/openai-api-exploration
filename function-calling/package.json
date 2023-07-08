@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "exec": "ts-node -r tsconfig-paths/register src/main.ts"
+    "exec": "ts-node -r tsconfig-paths/register src/main.ts",
+    "env:export": "chmod +x .env ./env.sh"
   },
   "keywords": [],
   "author": "",

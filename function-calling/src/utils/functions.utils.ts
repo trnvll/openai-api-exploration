@@ -1,7 +1,6 @@
-
 interface GetCurrentWeatherArgs {
   location: string
-  unit: 'celcius' | 'fahrenheit'
+  unit: 'celsius' | 'fahrenheit'
 }
 
 const getCurrentWeather = (args: GetCurrentWeatherArgs) => {
@@ -10,7 +9,7 @@ const getCurrentWeather = (args: GetCurrentWeatherArgs) => {
   return {
     temperature: 72,
     forecast: ['sunny', 'windy'],
-    ...args
+    ...args,
   }
 }
 
